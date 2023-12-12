@@ -1,0 +1,61 @@
+Vector-jest jak koszyk mażna do niego 
+-int
+-stringa
+-flouta
+-chara
+-bulla
+Są to typy proste
+
+Vector < Osoba < tablica     Osoba-->string->imie  /  Osoba-->int->wiek,pesel
+
+T.proste
+obiekty
+tablice
+typy złożone
+----------------------------------------------------------------------------------------------------------------------
+#include <iostream>
+#include <vector>
+using namespace std;
+class Osoba
+{
+public:
+	string imie;
+	string nazwisko;
+	int wiek;
+public:
+	Osoba(string imie,string nazwisko,int wiek) {
+		this->imie = imie;
+		this->nazwisko = nazwisko;
+		this->wiek = wiek;
+	}
+};
+int main()
+{
+	vector <Osoba> tablica;
+	int ileOsob;
+	cout << "Podaj ile osob dodac do vectora = "; cin >> ileOsob;
+	for (size_t i = 0; i < ileOsob; i++) {
+		string imie;
+		string nazwisko;
+		int wiek;
+		cout << "nr " << i + 1 << " podaj imie = "; cin >> imie;
+		cout << "nr " << i + 1 << " podaj nazwisko = "; cin >> nazwisko;
+		cout << "nr " << i + 1 << " podaj wiek = "; cin >> wiek;
+
+		tablica.push_back(Osoba(imie, nazwisko, wiek));
+	}
+	//-------------------------------------------Odczyt Osoby z vectora: tablica---------------------------------------------------
+	for (size_t i = 0; i < tablica.size(); i++)
+	{
+		cout << "Imie: " << tablica[i].imie << " Nazwisko: " << tablica[i].nazwisko << " wiek: " << tablica[i].wiek << endl;
+	}
+
+	
+	
+	
+	
+	
+	return EXIT_SUCCESS;
+}
+----------------------------------------------------------------------------------------------------------------------
+Zad  Utwóż aplikacje na konsole o nazwie lista zakupów. Lista zakupów zawiera dowolną ilość zakupów dodane z konsoli na następujące towary nabiał warzywa pieczywo a konsola pobiera również ceny tych towarów oraz wyznacza sumę udanych pieniędzy. Użyj vektora z obiektem zakupów
